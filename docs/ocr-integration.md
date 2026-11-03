@@ -1,7 +1,19 @@
-# Exhibit P OCR integration
+# OCR page (separate from the original homepage)
 
-This branch adds receipt text extraction with Tesseract. OCR reads text only and does not authenticate payment.
+The teammate's original homepage and verification handler remain intact.
+The OCR contribution now lives at /ocr, and its extractor stays in ocr/extractor.py.
 
-Install Python requirements and the Tesseract OCR command-line executable separately. Then run `python -m database.seed`, `python -m pytest -q`, and `python app.py`.
+## Run the website
 
-Receipt screenshots must be authorised or synthetic. Synthetic ledger matches are never proof of funds received.
+Install the Python packages with: python -m pip install -r requirements.txt
+Install the Tesseract OCR executable separately and make it available on PATH.
+Run python -m database.seed and python app.py, then visit:
+
+- http://127.0.0.1:5000/ — original verification homepage
+- http://127.0.0.1:5000/ocr — independent receipt scanner
+
+Do not open templates/index.html directly or launch it with VS Code Live Server.
+Jinja variables render only when the page is served through Flask.
+
+OCR reads text from an image; it does not authenticate a payment.
+The verification ledger is simulated, not a bank/payment-provider settlement check.
