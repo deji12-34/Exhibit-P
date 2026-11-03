@@ -79,5 +79,5 @@ def verify_payment(reference, amount, currency, merchant_id):
 
     return {
         "result": "RECORD_MATCHED",
-        "message": "Payment successfully verified"
+        "message": "Details match the simulated demo ledger. Confirm funds separately in the official merchant account."
     }
