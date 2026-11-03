@@ -1,0 +1,27 @@
+
+# Python virtual environment
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Secrets and environment variables
+.env
+.env.*
+
+# Local database
+exhibit_p.db
+*.sqlite
+*.sqlite3
+
+# Uploaded receipts and test images
+uploads/*
+!uploads/.gitkeep
+
+# Editor and operating system files
+.vscode/
+.DS_Store
+Thumbs.db
