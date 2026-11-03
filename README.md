@@ -183,3 +183,12 @@ Demonstration data should be synthetic. Real transaction receipts and financial 
 ---
 
 *EXHIBIT P — Evidence. Integrity. Verification.*
+
+## Receipt OCR contribution (feature branch)
+
+See [OCR integration guide](docs/ocr-integration.md) for setup, safe synthetic testing and limitations.
+Install the Python requirements and the **Tesseract OCR executable** separately.
+Run `python -m database.seed`, then `python -m pytest -q` and `python app.py`.
+
+OCR extracts candidate text fields; it **does not** authenticate an image or confirm funds have arrived.
+The verification ledger remains simulated.
